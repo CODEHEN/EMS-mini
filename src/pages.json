@@ -1,9 +1,128 @@
 {
-	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+	"pages": [
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "uni-app"
+				"navigationBarTitleText": "首页",
+				"usingComponents": {
+					"van-button": "/wxcomponents/vant/dist/button/index",
+					"van-grid": "/wxcomponents/vant/dist/grid/index",
+					"van-grid-item": "/wxcomponents/vant/dist/grid-item/index",
+					"van-cell": "/wxcomponents/vant/dist/cell/index",
+					"van-cell-group": "/wxcomponents/vant/dist/cell-group/index"
+				}
+			}
+		},
+		{
+			"path": "pages/cet/index",
+			"style": {
+				"navigationBarTitleText": "四六级成绩查询",
+				"usingComponents": {
+					"van-button": "/wxcomponents/vant/dist/button/index",
+					"van-dialog": "/wxcomponents/vant/dist/dialog/index",
+					"van-cell": "/wxcomponents/vant/dist/cell/index",
+					"van-cell-group": "/wxcomponents/vant/dist/cell-group/index"
+				}
+			}
+		},
+		{
+			"path": "pages/tip/index",
+			"style": {
+				"navigationBarTitleText": "校园公告",
+				"usingComponents": {
+					"van-button": "/wxcomponents/vant/dist/button/index",
+					"van-dialog": "/wxcomponents/vant/dist/dialog/index",
+					"van-cell": "/wxcomponents/vant/dist/cell/index",
+					"van-cell-group": "/wxcomponents/vant/dist/cell-group/index"
+				}
+			}
+		},
+		{
+			"path": "pages/schedule/index",
+			"style": {
+				"navigationBarTitleText": "课表",
+				"usingComponents": {
+					"van-button": "/wxcomponents/vant/dist/button/index",
+					"van-notify": "/wxcomponents/vant/dist/notify/index"
+				}
+			}
+		},
+		{
+			"path": "pages/grade/courseGrade",
+			"style": {
+				"navigationBarTitleText": "课程成绩",
+				"usingComponents": {
+					"van-button": "/wxcomponents/vant/dist/button/index",
+					"van-notify": "/wxcomponents/vant/dist/notify/index",
+					"van-action-sheet": "/wxcomponents/vant/dist/action-sheet/index",
+					"van-row": "/wxcomponents/vant/dist/row/index",
+					"van-col": "/wxcomponents/vant/dist/col/index",
+					"van-cell": "/wxcomponents/vant/dist/cell/index",
+					"van-cell-group": "/wxcomponents/vant/dist/cell-group/index"
+				}
+			}
+		},
+		{
+			"path": "pages/course/index",
+			"style": {
+				"navigationBarTitleText": "我的课程",
+				"usingComponents": {
+					"van-action-sheet": "/wxcomponents/vant/dist/action-sheet/index",
+					"van-cell": "/wxcomponents/vant/dist/cell/index"
+				}
+			}
+		},
+		{
+			"path": "pages/reaward/index",
+			"style": {
+				"navigationBarTitleText": "奖惩信息",
+				"usingComponents": {
+					"van-action-sheet": "/wxcomponents/vant/dist/action-sheet/index",
+					"van-cell": "/wxcomponents/vant/dist/cell/index"
+				}
+			}
+		},
+		{
+			"path": "pages/userinfo/index",
+			"style": {
+				"navigationBarTitleText": "个人信息",
+				"usingComponents": {
+					"van-action-sheet": "/wxcomponents/vant/dist/action-sheet/index",
+					"van-cell": "/wxcomponents/vant/dist/cell/index",
+					"van-image": "/wxcomponents/vant/dist/image/index",
+					"van-field": "/wxcomponents/vant/dist/field/index"
+				}
+			}
+		},
+		{
+			"path": "pages/my/index",
+			"style": {
+				"navigationBarTitleText": "我的",
+				"usingComponents": {
+					"van-button": "/wxcomponents/vant/dist/button/index"
+				}
+			}
+		},
+		{
+			"path": "pages/login/index",
+			"style": {
+				"navigationBarTitleText": "登录",
+				"usingComponents": {
+					"van-button": "/wxcomponents/vant/dist/button/index",
+					"van-dialog": "/wxcomponents/vant/dist/dialog/index"
+				}
+			}
+		},
+		{
+			"path": "pages/login/bind",
+			"style": {
+				"navigationBarTitleText": "绑定",
+				"usingComponents": {
+					"van-image": "/wxcomponents/vant/dist/image/index",
+					"van-field": "/wxcomponents/vant/dist/field/index",
+					"van-cell-group": "/wxcomponents/vant/dist/cell-group/index",
+					"van-notify": "/wxcomponents/vant/dist/notify/index"
+				}
 			}
 		}
 	],
@@ -12,5 +131,27 @@
 		"navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar":{
+		"list":[
+			{
+				"pagePath":"pages/index/index",
+				"text":"首页",
+				"iconPath":"./static/images/index_icon/index.png",
+				"selectedIconPath":"./static/images/index_icon/index_press.png"
+			},
+			{
+				"pagePath":"pages/schedule/index",
+				"text":"课表",
+				"iconPath":"./static/images/index_icon/course.png",
+				"selectedIconPath":"./static/images/index_icon/course_press.png"
+			},
+			{
+				"pagePath":"pages/my/index",
+				"text":"我的",
+				"iconPath":"./static/images/index_icon/my.png",
+				"selectedIconPath":"./static/images/index_icon/my_press.png"
+			}
+		]
 	}
 }
