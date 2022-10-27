@@ -48,6 +48,7 @@ name: "courseGrade",
           res.forEach(item => {
             const obj = {name: item}
             this.actions.push(obj)
+            console.log(this.actions)
           })
           this.getCourse(this.selectSemester)
         }
@@ -98,7 +99,7 @@ name: "courseGrade",
  }
  .gradeTitle {
     min-width: 60%;
-    font-size: 33rpx;
+    font-size: 29rpx;
     font-weight: 400;
  }
  .gradeValue {

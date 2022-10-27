@@ -37,6 +37,7 @@
 </template>
 
 <script>
+import {updateUserInfo} from '@/api/http'
 import HmFriendInformationCard from '@/wxcomponents/hm-friend-information-card/index.vue'
 	export default {
   components: {
@@ -83,15 +84,13 @@ import HmFriendInformationCard from '@/wxcomponents/hm-friend-information-card/i
           key: 'userBaseInfo',
           success: function (res) {
             _this.usersInfo = res.data
-            console.log('usersInfo')
-            console.log(_this.usersInfo)
           },
           fail: function (res) {
             console.log(res)
           }
         })
       },
-			savaInfo() {
+      savaInfo(options) {
 				if (!this.usersInfo.phone) {
 					uni.showToast({
 						title: '请填写手机号码',
@@ -116,7 +115,7 @@ import HmFriendInformationCard from '@/wxcomponents/hm-friend-information-card/i
           });
           return;
         }
-				if (!this.isPoneAvailable(mobile)) {
+				if (!this.isPoneAvailable(this.usersInfo.phone)) {
 					uni.showToast({
 						title: '手机号码有误，请重填',
 						icon: 'none',
@@ -124,21 +123,25 @@ import HmFriendInformationCard from '@/wxcomponents/hm-friend-information-card/i
 					});
 					return;
 				}
-				this.updata(updata);
+        updateUserInfo('/user/info',this.usersInfo).then(res => {
+          if (res.code ===  200) {
+            uni.setStorageSync('userBaseInfo',this.usersInfo)
+            wx.showToast({
+              title: '修改成功',
+              icon: 'success',
+              duration: 2000
+            })
+          }
+        })
 			},
 			isPoneAvailable(poneInput) {
-				var myreg = /^[1][3,4,5,7,8][0-9]{9}$/;
+				var myreg = /[1][345789]\d{9}/;
 				if (!myreg.test(poneInput)) {
 					return false;
 				} else {
 					return true;
 				}
-			},
-			async updata(datas) {
-				//传后台
-
-			},
-
+			}
 		},
     created() {
 		  this.getUserInfo()

@@ -38,6 +38,31 @@
 			}
 		},
 		{
+			"path": "pages/room/nullroomSearch",
+			"style": {
+				"navigationBarTitleText": "空教室查询",
+				"usingComponents": {
+					"van-button": "/wxcomponents/vant/dist/button/index",
+					"van-dialog": "/wxcomponents/vant/dist/dialog/index",
+					"van-cell": "/wxcomponents/vant/dist/cell/index",
+					"van-cell-group": "/wxcomponents/vant/dist/cell-group/index",
+					"van-action-sheet": "/wxcomponents/vant/dist/action-sheet/index"
+				}
+			}
+		},
+		{
+			"path": "pages/room/nullroom",
+			"style": {
+				"navigationBarTitleText": "空教室查询",
+				"usingComponents": {
+					"van-button": "/wxcomponents/vant/dist/button/index",
+					"van-dialog": "/wxcomponents/vant/dist/dialog/index",
+					"van-cell": "/wxcomponents/vant/dist/cell/index",
+					"van-cell-group": "/wxcomponents/vant/dist/cell-group/index"
+				}
+			}
+		},
+		{
 			"path": "pages/schedule/index",
 			"style": {
 				"navigationBarTitleText": "课表",

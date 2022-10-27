@@ -18,6 +18,12 @@ import Dialog from './@/wxcomponents/vant/dist/dialog/dialog';
     onLoad() {
 
     },
+    onShow: function() {
+      wx.hideHomeButton({
+        success: function () {
+        },
+      })
+    },
     methods:{
       onGetUserInfo(e) {
         const _this = this

@@ -9,7 +9,7 @@
       <van-grid-item icon="/static/images/app_icon/course_list.png" url="/pages/course/index" text="学期课程" />
       <van-grid-item icon="/static/images/app_icon/assess.png" url="/pages/reaward/index" text="奖惩信息" />
       <van-grid-item icon="/static/images/app_icon/summary.png" url="/pages/userinfo/index" text="个人信息" />
-      <van-grid-item icon="/static/images/app_icon/classroom.png" text="空教室" />
+      <van-grid-item icon="/static/images/app_icon/classroom.png" url="/pages/room/nullroomSearch" text="空教室" />
     </van-grid>
 
     <view class="todayCourse">
@@ -87,6 +87,9 @@ name: "index",
             }
           }).then(res => {
             if (res.code === 200) {
+              if (_this.day === 0) {
+                _this.day = 7
+              }
               res.data[_this.day-1].forEach((item,index) => {
                 if (item != null) {
                   const va = item.split(String.fromCharCode(10))
